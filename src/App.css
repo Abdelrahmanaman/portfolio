@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Space Mono';
+  font-weight: bold;
+}
+
+:root {
+  --gap: 5em;
+  --line: 1px;
+  --color: rgba(255, 255, 255, 0.2);
+  --type-writer-speed: 6s
+}
+
+
+body {
+  background-color: #09090b;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2) .125rem, transparent .125rem),
+    linear-gradient(-90deg, rgba(255, 255, 255, 0.2) .125rem, transparent .125rem);
+  background-size: 5rem 5rem;
+  height: 100vh;
+  width: 100%;
+}
+
+
+section .header-animation {
+  position: relative;
+  color: black;
+  position: relative;
+  background-color: white;
+}
+
+section .header-animation::before,
+section .header-animation::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+section {
+  width: fit-content;
+  height: 100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+section .header-animation::before {
+  animation: typewriter var(--type-writer-speed) steps(31) 1s forwards;
+  background-color: white;
+}
+
+section .header-animation::after {
+  width: .225em;
+  background-color: black;
+  animation: typewriter var(--type-writer-speed) steps(31) 1s forwards,
+    blink 500ms steps(29) infinite;
+}
+
+section .about-me {
+  opacity: 0;
+  transform: translateY(0);
+  color: #09090b;
+  animation: fadeInUp 2s forwards 7s;
+  background-color: white;
+  padding: 1rem;
+}
+
+section .profile-img {
+  opacity: 0;
+  transform: translateY(0);
+  animation: fadein 750ms forwards ;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes fadein {
+  to {
+    opacity: 1;
+    transform: translateY(1.25rem);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(1.5rem);
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
